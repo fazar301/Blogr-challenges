@@ -1,0 +1,645 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* color: hsl(0, 0%, 100%) */
+    overflow-x: hidden;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+/* Navbar dan cta */
+
+.intro{
+    /* border: 1px solid green; */
+    height: 95vh;
+    background: linear-gradient(to right,hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    position: relative;
+    z-index: 1;
+    top: -30px;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 80px;
+    color:hsl(0, 0%, 100%);
+    /* overflow: hidden; */
+}
+.cta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    /* border: 1px solid red; */
+    width: max-content;
+    line-height: 70px;
+}
+.cta > h1{
+    font-size: 4.2em;
+    font-weight: 500;
+}
+.cta > p{
+    font-weight: 400;
+    font-size: 1.2em;
+}
+.intro::after{
+    content: '';
+    display: block;
+    background-image: url('../images/bg-pattern-intro.svg');
+    background-size: 250%;
+    border-bottom-left-radius: 80px;
+    background-position:-500px -1450px;
+    background-repeat: no-repeat;
+    /* border: 1px solid blue; */
+    position: absolute;
+    top: 0;
+    
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    z-index: -1;
+}
+.container{
+    width: 80vw;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+nav,.description{
+    margin-top: 30px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    padding: 30px 0px;
+    align-items: center;
+}
+a,a:active{
+    color: #000;
+    text-decoration: none;
+}
+.header span,.right a, .cta-btn button{
+    color: hsla(0, 0%, 100%,0.8);
+    font-weight: 600;
+    /* font-size: 1.1em; */
+}
+
+.items{
+    /* border: 1px solid black; */
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+    /* Mobile nav animation */
+}
+.dropdowns{
+    /* display: none; */
+    margin-top: 20px;
+    margin-left: -20px;
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+    width: 150px;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+    line-height:30px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+}
+ul li{
+    list-style: none;
+}
+.left,.right{
+    display: flex;
+    align-items: center;
+}
+.right li{
+    margin-left: 40px;
+}
+.logo,.logos{
+    font-size: 2em;
+    font-weight: 600;
+}
+.header{
+    margin:0 40px;
+}
+.right li:nth-child(2){
+/* border: 1px solid green; */
+/* display: flex; */
+width: max-content;
+}
+.right li:nth-child(2) a{
+    padding: 10px 25px;
+
+    
+}
+.right li:nth-child(2) a, .cta-btn button:nth-child(1){
+    border-radius: 50px;
+    color: hsl(356, 100%, 66%);
+    background-color: hsl(0, 0%, 100%);
+    
+}
+.cta-btn button:nth-child(2){
+    transition: 0.3s;
+    border-radius: 50px;
+    border: 1px solid hsl(0, 0%, 100%);
+}
+.cta-btn button:nth-child(2):hover{
+    color: hsl(356, 100%, 66%);
+    background-color: hsl(0, 0%, 100%);
+}
+.right li:nth-child(2) a:hover, .cta-btn button:nth-child(1):hover{
+    transition: 0.3s;
+    background-color: hsl(355, 100%, 74%);
+    color: white;
+}
+
+/* Pointer */
+.btn-drop,.dropdowns li,button{
+    cursor:pointer;
+}
+
+/* Button dropdown */
+button{
+    background: transparent;
+    border: none;
+    outline: none;
+
+}
+.btn-drop{
+    display: flex;
+}
+.btn-drop i{
+    margin-left: 10px;
+}
+.btn-drop > span{
+    position: relative;
+}
+.btn-drop > span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+    bottom: 0;
+}
+.btnActive > span{
+    color:  hsl(0, 0%, 100%);
+}
+.btnActive > span::after{
+    width: 100%;
+}
+.btnActive i svg{
+    transform: rotateX(180deg);
+}
+
+.btnActive ~ .dropdowns li:hover{
+    font-weight: 700;
+}
+.btnActive ~ .dropdowns{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* Button cta */
+.cta-btn button:nth-child(2){
+    margin-left: 10px;
+}
+.cta-btn button{
+
+    padding: 15px 30px;
+    font-size: 1em;
+}
+.logos,.hamburger{
+    display: none;
+    height: max-content;
+}
+
+/* Akhir Navbar dan cta */
+
+.headings{
+    color: hsl(208, 49%, 24%);
+}
+
+/* bagian 2 */
+.bagian-2{
+    position: relative;
+    padding: 70px 0 0 0;
+}
+h1.headings{
+    text-align: center;
+    margin-bottom: 90px;
+}
+h3.headings{
+    margin-bottom: 30px;
+}
+.description{
+    line-height: 25px;
+    color: hsl(207, 13%, 34%);
+    font-weight: 300;
+}
+.bagian-2 .col{
+    margin-bottom: 70px;
+}
+.row{
+    display: flex;
+}
+.inline{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fdcol{
+    width: 50%;
+    flex-direction: column;
+}
+
+
+/* Ilustration editor desktop */
+.gambar-editor{
+    width: 70%;
+    height: 100%;
+    /* background: url('../images/illustration-editor-desktop.svg') no-repeat; */
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: -210px;
+    /* width: max-content; */
+    
+}
+/* akhir bagian 2 */
+
+/* bagian 3 */
+.bagian-3{
+    margin-top: 200px;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to right,rgb(44, 45, 63),hsl(237, 23%, 32%));
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 80px;
+    position: relative;
+}
+.bagian-3::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg-pattern-circles.svg') no-repeat;
+    background-size: 70%;
+    background-position: -40% 80%;
+    position: absolute;
+}
+.bagian-3::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 130%;
+    background: url('../images/illustration-phones.svg') no-repeat;
+    position: absolute;
+    z-index: 1;
+    left: 10%;
+    margin-top: -70px;
+}
+.bagian-3 > .con{
+    width: 50%;
+    padding: 100px 50px;
+    float: right;
+    position: relative;
+    z-index: 100;
+}
+.bagian-3 .description,.bagian-3{
+    color: white;
+}
+.smartphone{
+    position: absolute;
+    top: -150px;
+    z-index: 99;
+    display: none;
+    width: 100%;
+}
+.smartphone img{
+    width: 100%;
+}
+
+
+
+
+/* bagian 4 */
+.bagian-4 .gambar-editor{
+    right: unset;
+    left: -400px;
+    top: 100px;
+}
+.bagian-4 .inline{
+    margin-top: 200px;
+}
+/* akhir bagian 4 */
+
+
+
+/* footer */
+footer{
+    margin-top: 200px;
+    background: hsl(240, 10%, 16%);
+    color: hsl(0, 0%, 100%);
+    padding: 80px;
+    position: relative;
+    border-top-right-radius: 80px;
+}
+footer > .container{
+    display: flex;
+    justify-content: space-between;
+}
+footer ul:last-child{
+    margin-right: 150px;
+}
+/* akhir footer */
+img{
+    pointer-events: none;
+}
+.heading{
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: hsl(0, 0%, 100%);
+}
+footer li{
+    margin-bottom: 10px;
+}
+footer li a, footer li a:active{
+    color: hsl(240, 2%, 79%);
+}
+
+
+/* .attribution{
+    background-color: hsl(208, 49%, 24%);
+    color: hsl(0, 0%, 100%);
+} */
+/* Responsive breakpoint */
+@media (max-width: 1200px){
+    .gambar-editor{
+        right: unset;
+        position: relative;
+        width: 100%;
+        margin: auto;
+    }
+    .bagian-4 .inline{
+        margin-top: 0;
+    }
+    .bagian-4 .gambar-editor{
+        order: 1;
+        left: unset;
+        top: unset;
+    }
+    .inline >.row.fdcol{
+        order: unset;
+    }
+    .img-con{
+        width: 100%;
+    }
+    .gambar-editor img{
+        width: 100%;
+    }
+    .inline{
+        justify-content: center;
+    }
+    .fdcol:nth-child(1){
+        order: 1;
+    }
+    .fdcol{
+        width: max-content;
+    }
+    .bagian-2{
+        text-align: center;
+        width: 100%;
+    }
+    .headings{
+        font-size: 1.4em;
+        font-weight: 400;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    .gambar-editor{
+        margin-bottom: 50px;
+    }
+    .bagian-2 .col{
+        padding: 0 30px;
+    }
+    .bagian-3{
+        height: 600px;
+    }
+    .bagian-3::after{
+        background-size: 120%;
+        background-position: center -60%;
+    }
+    .bagian-3::before{
+        background-image: none;
+        content: url('../images/illustration-phones.svg');
+        position: absolute;
+        top: -55%;
+        left: 0;
+        
+        display: none;
+    }
+    .bagian-3 > .con{
+        padding-top: 200px;
+        text-align: center;
+        width: 100%;
+        
+    }
+    .smartphone{
+        display: block;
+    }
+    .judul{
+        font-size: 1.5em;
+    }
+
+}
+
+
+
+
+@media (max-width: 1000px){
+    /* Navbar dan cta */
+    .cta{
+        width: 90%;
+        line-height: normal;
+    }
+    .cta h1{
+        font-size: 2em;
+    }
+    .cta p{
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 1.1em;
+        line-height: 30px;
+    }
+    .cta-btn button{
+        padding: 15px 20px;
+        float: left;
+    }
+    .cta-btn::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .cta-btn{
+        width: max-content;
+        margin: auto;
+    }
+    .intro::after{
+        background-size: 500%;
+        background-position: 40% 40%;
+    }
+    .logos.logo,.hamburger{
+        display: block;
+    }
+    .logo{
+        display: none;
+    }
+    .items{
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+        position: absolute;
+        /* transform: translateX(100%); */
+        background-color: white;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 100px;
+        height: 0;
+        overflow: hidden;
+        /* padding: 40px; */
+        /* height: 60vh; */
+        border-radius: 5px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+    .itemsActive{
+        height: max-content;
+        overflow: hidden;
+        padding: 40px 20px;
+    }
+    .btn-drop > span,.right li:nth-child(1) > a{
+        color: hsl(208, 49%, 24%);
+    }
+    .right li:nth-child(2) a{
+        background: linear-gradient(to right,hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        color: white;
+    }
+    .left{
+        padding-bottom: 30px;
+    }
+    .left > li:nth-child(1), .left > li:nth-child(2){
+        margin-bottom: 30px;
+    }
+    .dropdowns{
+        background-color: hsla(240, 2%, 79%,0.3);
+        box-shadow: none;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    .right{
+        padding-top: 30px;
+        position: relative;
+    }
+    .right::after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: hsl(240, 2%, 79%);
+        top: 0;
+    }
+    .btnActive > span,.dropdowns a{
+        color: hsl(207, 13%, 34%);
+    }
+    li.header{
+        width: 100%;
+        position: relative;
+    }
+    .dropdowns{
+        position: static;
+        margin-left: 0;
+    }
+    .btn-drop{
+        margin: auto;
+    }
+    .right,.left{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .right li{
+        margin: 0;
+    }
+    .right li:nth-child(2){
+        margin-top: 30px;
+    }
+    /* .header span,.right a, .cta-btn button{
+        color: hsla(0, 0%, 0%,0.8);
+        font-size: 1.1em;
+    } */
+    path{
+        stroke: #FF7B86
+    }
+    .btnActive > span::after{
+        display: none;
+    }
+    /* Akhir Navbar dan cta */
+
+
+
+
+    /* footer */
+    footer .container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+    }
+    footer ul:nth-child(3){
+        margin-top: 80px;
+    }
+    footer ul{
+        margin-top: 50px;
+    }
+    footer ul:last-child{
+        margin-right: 0;
+    }
+    /* akhir footer */
+}
+
+
+
+@media (max-width:325px){
+    /* Navbar dan cta */
+    .cta h1{
+        font-size: 1.5em;
+    }
+    .cta p{
+        font-size: 1em;
+        line-height: 20px;
+    }
+    .cta-btn{
+        margin-top: 40px;
+        width: auto;
+    }
+    .cta-btn button{
+        float: none;
+        margin: 0 0 20px 0;
+    }
+    .cta-btn button:nth-child(2){
+        margin-left: 0;
+    }
+    /* Akhir Navbar dan cta */
+}
